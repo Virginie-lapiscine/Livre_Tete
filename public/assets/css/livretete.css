@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box; /* conserve la taille de l'élément même avec padding */
+}
 body{
     margin: 0;
     padding: 0;
@@ -37,8 +40,6 @@ ul{
     margin: 15px auto 0;
 }
 .accroche h1{
-    /*font-family: 'Indie Flower', cursive;
-    font-style: italic;*/
     line-height: 180px;
     margin: 0;
 }
@@ -183,6 +184,23 @@ ul{
 /**** media queries ****/
 
 @media screen and (max-width: 640px) {
+    .header{
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .milieu, .accroche{
+        width: 100%;
+        text-align: center;
+    }
+    .accroche h1{
+        line-height: 80px;
+    }
+    .logo{
+        width: 80px;
+    }
+    .empty{
+        display: none;
+    }
     /* page lis_profiles */
     .list_profiles{
         width: 90%;
