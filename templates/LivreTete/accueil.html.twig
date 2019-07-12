@@ -1,0 +1,57 @@
+{% extends "LivreTete/basetete.html.twig" %}
+
+{# contenu du block 'content' pour la page d'accueil #}
+
+{# 3 sections
+## 1) j'affiche les 2 derniers profils du tableau
+## 2) titre 'dernières actus'
+## 3) créer 3 actus fixes
+#}
+
+
+{% block content %}
+
+    {# j'affiche les 2 derniers profils du tableau #}
+    <section class="derniers_profiles">
+        {% for key, profile in derniers %}
+            <article class="profile">
+                <div class="img_profile">
+                    {# si la clé du array 'derniers' est égale à 0, j'attribue la valeur 7 à l'id pour afficher le bon profil
+                     ## si la clé est 1 j'affiche le profil 8 #}
+                    {% if key == 0 %}
+                        <a href="{{ path('profile', {'id' : 7}) }}">
+                    {% else %}
+                        <a href="{{ path('profile', {'id' : 8}) }}">
+                    {% endif %}
+                        <img class="resp" src="{{ profile.image }}" alt="">
+                    </a>
+                </div>
+                <h2 class="name_profile">{{ profile.name }}</h2>
+            </article>
+        {% endfor %}
+    </section>
+
+    {# titre 'dernières actus' #}
+    <section class="titre_actus">
+        <h3>Dernières actualités</h3>
+    </section>
+
+    {# créer 3 actus fixes #}
+    <section class="dernieres_actus">
+        <article class="actu">
+            <div class="img_actus"><img class="resp" src="https://previews.123rf.com/images/suchota/suchota1504/suchota150400704/38933908-r%C3%A9sum%C3%A9-fragment-de-peinture-acrylique-moderne-texture-color%C3%A9e-des-taches-arc-en-ciel-art-contemporain-pein.jpg" alt="photo actu 1"></div>
+            <h2>Actu 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut ornare justo. Fusce ac justo lobortis, aliquam arcu nec, ornare risus. Aenean luctus efficitur venenatis. Fusce pellentesque sodales mollis. Sed tristique lorem quis odio vestibulum, id porttitor nunc convallis. Aliquam fringilla purus et pellentesque volutpat.</p>
+        </article>
+        <article class="actu">
+            <div class="img_actus"><img class="resp" src="https://previews.123rf.com/images/suchota/suchota1504/suchota150400847/39043268-abstract-acrylic-modern-painting-fragment-colorful-rainbow-splashes-texture-contemporary-art-spray-p.jpg" alt="photo actu 2"></div>
+            <h2>Actu 2</h2>
+            <p>Curabitur in odio ipsum. Sed accumsan urna quis scelerisque cursus. Nulla nec nunc quis augue commodo lobortis vitae vitae dolor. Pellentesque pellentesque libero turpis. Duis tristique sodales nunc et ornare. Cras et fringilla velit, eu scelerisque urna. Aenean vestibulum a ante quis rhoncus.</p>
+        </article>
+        <article class="actu">
+            <div class="img_actus"><img class="resp" src="https://previews.123rf.com/images/suchota/suchota1504/suchota150401535/39350471-abstrakte-acryl-modernen-malerei-fragment-bunter-regenbogen-spritzt-textur-zeitgen%C3%B6ssische-kunst-spr%C3%BChfarbe-.jpg" alt="photo actu 3"></div>
+            <h2>Actu 3</h2>
+            <p>Integer sit amet mattis enim, a auctor lorem. Nulla quam neque, tincidunt eget finibus et, accumsan sed nulla. Donec in neque fringilla, mollis ligula eu, aliquet leo. Mauris lectus velit, aliquet vel tortor auctor, semper pharetra quam. Phasellus non diam nisi. Donec nisi libero, dignissim ac faucibus id, placerat vel mi.</p>
+        </article>
+    </section>
+{% endblock %}

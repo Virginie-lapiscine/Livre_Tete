@@ -1,0 +1,16 @@
+{% extends "LivreTete/basetete.html.twig" %}
+
+{# contenu du block content pour la page du profil sélecionné #}
+
+{% block content %}
+    <section class="user_profile">
+        <div class="img_userprofile">
+            <img class="resp round" src="{{ profile.image }}" alt="">
+        </div>
+        <h2 class="name_profile">{{ profile.name }}</h2>
+        <span class="pseudo">Pseudo</span>
+        <h3 class="shortname">{{ profile.shortname }}</h3>
+        <span>Lieu : {{ profile.reknown }}</span>
+        <p>{{ profile.bio }}</p>
+    </section>
+{% endblock %}

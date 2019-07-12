@@ -1,0 +1,69 @@
+{# Template base du projet LivreTete
+## Header, Footer identiques dans toutes les pages du site
+#}
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Livre Tete</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset("assets/css/livretete.css") }}">
+</head>
+<body>
+    <header class="header">
+        {# contient un logo au centre et une phrase d'accroche à droite du logo #}
+        <div class="empty"></div>
+        <div class="milieu">
+            <div class="logo">
+                <img class="resp" src="https://images.vexels.com/media/users/3/147101/isolated/preview/b4a49d4b864c74bb73de63f080ad7930-instagram-profile-button-by-vexels.png" alt="">
+            </div>
+        </div>
+        <div class="accroche">
+            <h1>Phrase d'accroche</h1>
+        </div>
+    </header>
+
+    <main class="main">
+        <nav class="sidebar">
+            {# sidebar sur le coté gauche
+            ## menu comprenant 3 liens + {séparation} + autres liens vers chaque profil
+            #}
+            <ul class="menu">
+                <li><a href="{{ path('accueil_livre') }}">Accueil</a></li>
+                <li><a href="{{ path('list_profiles') }}">Liste des profils</a></li>
+                <li><a href="{{ path('contact') }}">Contact</a></li>
+            </ul>
+            <hr class="hr_sidebar"/>
+
+            {# je liste tous les profils avec une boucle FOR #}
+            {# j'affiche le nom de chacun avec un lien vers la page de son profil #}
+            <ul>
+                {% for key, profile in profiles %}
+                    <li><a href="{{ path('profile', {'id' : key}) }}">{{ profile.name }}</a></li>
+                {% endfor %}
+            </ul>
+
+
+        </nav>
+        <div class="content">
+            {# block de contenu différent pour chaque page #}
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+
+    <footer class="footer">
+        {# 1 image à chaque extrémité du footer #}
+        <div class="img_footer">
+            <img class="resp" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/480px-Instagram_icon.png" alt="">
+        </div>
+        <div class="img_footer">
+            <img class="resp" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/480px-Instagram_icon.png" alt="">
+        </div>
+    </footer>
+
+</body>
+</html>

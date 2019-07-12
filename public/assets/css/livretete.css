@@ -1,0 +1,197 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 18px;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+ul{
+    list-style: none;
+}
+/* template base */
+.header, .footer{
+    width: 100%;
+    height: 180px;
+    background-color: #313131;
+    display: flex;
+    justify-content: space-around;
+    color: #FFFFFF;
+}
+.main{
+    display: flex;
+}
+.footer{
+    height: 150px;
+    justify-content: space-between;
+
+}
+.empty, .milieu, .accroche{
+    width: 30%;
+}
+.logo{
+    width: 150px;
+    height: auto;
+    margin: 15px auto 0;
+}
+.accroche h1{
+    /*font-family: 'Indie Flower', cursive;
+    font-style: italic;*/
+    line-height: 180px;
+    margin: 0;
+}
+.sidebar{
+    width: 20%;
+    height: 100%;
+
+    /*position: fixed;
+    top: 200px;
+    left: 0;*/
+}
+.menu{
+    font-size: 22px;
+    line-height: 34px;
+}
+.hr_sidebar{
+    width: 80%;
+}
+.content{
+    width: 80%;
+    margin-top: 20px;
+}
+.resp{
+    width: 100%;
+    height: auto;
+}
+.img_footer{
+    width: 100px;
+    height: auto;
+    margin: 25px 30px 0;
+}
+
+/* contenu page accueil */
+.derniers_profiles, .titre_actus, .dernieres_actus {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.derniers_profiles{
+    width: 60%;
+    margin: 0 auto;
+}
+.titre_actus{
+    width: 40%;
+    border: 1px solid #999999;
+    margin: 80px auto 40px;
+    background-color: #C9C9C9;
+}
+.titre_actus h3{
+    font-size: 30px;
+    margin: 0;
+    line-height: 50px;
+}
+.dernieres_actus{
+    margin-bottom: 20px;
+}
+.profile{
+    width: 45%;
+    border: 1px solid #999999;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #999999;
+}
+.img_profile{
+    width: 50%;
+    margin: 10px auto;
+}
+.name_profile{
+    text-align: center;
+}
+.actu{
+    width: 29%;
+    padding: 10px;
+    border: 1px solid #999999;
+}
+.actu h2{
+    text-align: center;
+    margin: 0;
+}
+.img_actus{
+
+}
+
+
+/* contenu de la page list_profiles */
+.list_profiles{
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.list{
+    margin-bottom: 20px;
+    width: 45%;
+}
+
+/* contenu de la page profile */
+.user_profile{
+    width: 70%;
+    margin: 0 auto;
+}
+.shortname{
+    text-align: center;
+    margin-top: 0;
+}
+.img_userprofile{
+    width: 30%;
+    height: auto;
+    margin: 0 auto;
+}
+.round{
+    border-radius: 50%;
+}
+.pseudo{
+    display: block;
+    text-align: center;
+}
+
+/* page contact */
+.contact{
+    width: 50%;
+    margin: 20px auto;
+}
+.btn_form{
+    padding: 5px 20px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 0 3px #999999;
+    cursor: pointer;
+}
+.btn_form:hover{
+    background-color: rgba(226,2,23,0.8);
+    box-shadow: 0 0 3px #E20217;
+    color: #FFFFFF;
+}
+
+
+
+/**** media queries ****/
+
+@media screen and (max-width: 640px) {
+    /* page lis_profiles */
+    .list_profiles{
+        width: 90%;
+        justify-content: center;
+    }
+    .profile {
+        width:80%;
+    }
+    .name_profile{
+        font-size: 20px;
+    }
+}

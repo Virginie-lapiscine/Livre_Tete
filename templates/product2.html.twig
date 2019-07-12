@@ -1,0 +1,16 @@
+{# Affiche le produit sélectionné dans la page list_articles #}
+
+{# on étend le template de base de la page home #}
+{% extends "base/base_product.html.twig" %}
+
+    {# block 'main' (child template) de la page article #}
+    {% block content %}
+
+            <article class="product">
+                <h2 class="titreProduct">{{ product.title }}</h2>
+                <div class="img_product"><img class="resp" src="{{ product.image }}" alt=""></div>
+                <p class="text_product">{{ product.content }}</p>
+            </article>
+
+    {% endblock %}
+

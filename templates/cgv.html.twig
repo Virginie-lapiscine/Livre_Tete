@@ -1,0 +1,30 @@
+{% extends "home.html.twig" %}
+
+{# affiche les CGV dans la langue sélectionnée dans l'url
+## FR ou EN en paramètre query
+#}
+{% block main %}
+    <section class="cgv_content">
+        <div class="langue">
+            <a class="lien_lang" href="{{ path('cgv', {'lang' : 'FR'}) }}">FR</a> | <a class="lien_lang" href="{{ path('cgv', {'lang' : 'EN'}) }}">EN</a>
+        </div>
+        <div class="cgv_text">
+            {% if langue == 'EN'%}
+                <h1 class="cgv_title">Terms of Sales</h1>
+                <p>EN Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit enim enim, a tincidunt tortor bibendum non. Morbi pulvinar tempor ante sit amet varius. Praesent congue placerat neque, id mattis quam efficitur ut. Morbi pretium placerat elit, non aliquet lorem accumsan finibus. Vivamus at lobortis quam, lobortis dictum diam. Proin diam dui, ultrices lacinia tortor id, blandit pellentesque nisi. Suspendisse at eleifend sapien. Duis sit amet felis in purus vestibulum eleifend vitae eget eros. Phasellus malesuada, ipsum sed aliquam vulputate, risus magna consequat risus, egestas finibus odio sem sed eros. Aliquam ultrices lorem nec neque dignissim, ac venenatis elit fringilla. Quisque posuere fringilla finibus. Integer ultrices velit non mauris ultricies malesuada.</p>
+
+                    <p>Suspendisse quis arcu nec libero congue commodo. Suspendisse tristique diam eros, ac lobortis libero fermentum vitae. Quisque maximus, lectus a vulputate mollis, velit leo sagittis est, eget consequat purus orci nec nisi. Morbi varius pellentesque mauris quis vehicula. In posuere odio at blandit accumsan. Nam egestas urna lectus, quis ultrices augue aliquet eu. Donec in ligula eu arcu condimentum vehicula quis a tortor. Morbi leo ex, tempus eu nunc sed, egestas blandit massa. Cras vel quam ac lorem interdum pretium ac ut purus. Nullam consequat lectus sed quam pulvinar, vitae consequat ex molestie. Proin nec lorem pellentesque, blandit nunc in, malesuada libero. Integer at mollis ligula, vitae sagittis ipsum. </p>
+            {% else %}
+                <h1 class="cgv_title">Conditions Générales de Vente</h1>
+                <p>FR Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit enim enim, a tincidunt tortor bibendum non. Morbi pulvinar tempor ante sit amet varius. Praesent congue placerat neque, id mattis quam efficitur ut. Morbi pretium placerat elit, non aliquet lorem accumsan finibus. Vivamus at lobortis quam, lobortis dictum diam. Proin diam dui, ultrices lacinia tortor id, blandit pellentesque nisi. Suspendisse at eleifend sapien. Duis sit amet felis in purus vestibulum eleifend vitae eget eros. Phasellus malesuada, ipsum sed aliquam vulputate, risus magna consequat risus, egestas finibus odio sem sed eros. Aliquam ultrices lorem nec neque dignissim, ac venenatis elit fringilla. Quisque posuere fringilla finibus. Integer ultrices velit non mauris ultricies malesuada.</p>
+
+                <p>Suspendisse quis arcu nec libero congue commodo. Suspendisse tristique diam eros, ac lobortis libero fermentum vitae. Quisque maximus, lectus a vulputate mollis, velit leo sagittis est, eget consequat purus orci nec nisi. Morbi varius pellentesque mauris quis vehicula. In posuere odio at blandit accumsan. Nam egestas urna lectus, quis ultrices augue aliquet eu. Donec in ligula eu arcu condimentum vehicula quis a tortor. Morbi leo ex, tempus eu nunc sed, egestas blandit massa. Cras vel quam ac lorem interdum pretium ac ut purus. Nullam consequat lectus sed quam pulvinar, vitae consequat ex molestie. Proin nec lorem pellentesque, blandit nunc in, malesuada libero. Integer at mollis ligula, vitae sagittis ipsum. </p>
+            {% endif %}
+        </div>
+
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.086323031577!2d-0.5996292850197307!3d44.79942937909876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd552845733eb33f%3A0x2bf918c8dee4ccff!2sLa+Piscine!5e0!3m2!1sfr!2sfr!4v1562746995645!5m2!1sfr!2sfr"
+                    width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </section>
+{% endblock %}

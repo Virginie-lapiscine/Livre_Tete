@@ -1,0 +1,19 @@
+{# Affiche la liste de tous les articles présent dans mon array #}
+
+{# on étend le template de base de la page home #}
+{% extends "home.html.twig" %}
+
+    {# block 'main' (child template) de la page list_articles #}
+    {% block main %}
+        <section class="contenu">
+            {% for id, article in articles %}
+                <article class="articleList">
+                    {# path('name_route', {'name_wildcard' : value}) #}
+                    <div class="image"><a href="{{ path('article_page', {'id': id}) }}"><img class="resp" src="{{ article.image }}" alt=""> </a></div>
+                    <h2><a class="lien_title" href="{{ path('article_page', {'id': id}) }}">{{ article.title }}</a></h2>
+                    <p>{{ article.content }}</p>
+                </article>
+            {% endfor %}
+        </section>
+    {% endblock %}
+

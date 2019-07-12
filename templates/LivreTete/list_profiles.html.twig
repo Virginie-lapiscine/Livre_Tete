@@ -1,0 +1,17 @@
+{% extends "LivreTete/basetete.html.twig" %}
+
+{# contenu du block 'content' pour la page qui liste les profils #}
+
+{% block content %}
+    <section class="list_profiles">
+    {% for key, profile in profiles %}
+        <article class="profile list">
+            {# le lien pointe sur la route name="profile" #}
+            <div class="img_profile">
+                <a href="{{ path('profile', {'id' : key}) }}"><img class="resp" src="{{ profile.image }}" alt=""></a>
+            </div>
+            <h2 class="name_profile"><a href="{{ path('profile', {'id' : key}) }}">{{ profile.name }}</a></h2>
+        </article>
+    {% endfor %}
+    </section>
+{% endblock %}

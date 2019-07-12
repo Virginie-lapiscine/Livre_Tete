@@ -1,0 +1,125 @@
+body{
+    margin: 0 auto;
+    padding: 0 auto;
+    font-family: Arial, sans-serif;
+}
+a{
+    text-decoration: none;
+}
+.header, .footer{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #313131;
+    color: #fff;
+}
+.logo{
+    width: 140px;
+    height: auto;
+    margin: 10px;
+}
+.menu ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    line-height: 100px;
+}
+.menu li{
+    padding: 0 40px;
+}
+.lienMenu{
+    color: #fff;
+}
+.lien_title{
+    color: #000;
+}
+.contenu {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px 0;
+}
+.articleList {
+    width: 30%;
+    font-size: 14px;
+    line-height: 20px;
+}
+.productList {
+    width: 45%;
+    font-size: 14px;
+    line-height: 20px;
+}
+.article{
+    width: 60%;
+    margin: 0 auto;
+}
+.image {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+.imageArt{
+    height: auto;
+}
+.img_product{
+    width: 50%;
+    margin: 0 auto;
+}
+.homeImg{
+    width: 60%;
+    margin: 20px auto 0;
+}
+.resp{
+    width: 100%;
+    height: auto;
+}
+.homeTitre{
+    text-align: center;
+}
+.titreArt{
+    text-align: center;
+}
+.navFooter{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+    line-height: 100px;
+}
+.cgv_content{
+    width: 80%;
+    margin: 0 auto;
+}
+.cgv_text{
+    width: 60%;
+    margin: 0 auto;
+}
+.cgv_text p{
+    font-size: 14px;
+    line-height: 20px;
+}
+.cgv_title{
+    text-align: center;
+
+}
+.map{
+    width: 60%;
+    margin: 0 auto;
+}
+.langue{
+    width: 100px;
+    float: right;
+    text-align: right;
+}
+.lien_lang{
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+}
+.lien_lang:hover{
+    color: red;
+}

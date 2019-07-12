@@ -1,0 +1,20 @@
+{# Affiche la liste de tous les produits présents dans mon array #}
+
+{# on étend le template de base de la page home #}
+{% extends "home.html.twig" %}
+
+    {# block 'main' (child template) de la page product_list #}
+    {% block main %}
+        <section class="contenu">
+            {# pour chaque élément de mon tableau, je crée 1 balise <article> #}
+            {% for product in products %}
+                <article class="productList">
+                    {# j'affiche l'image dans 1 div avec pour lien une redirection vers la page product et l'id du produit en paramtre #}
+                    <div class="img_product"><a href="{{ path('show_product', {'id': product.id}) }}"><img class="resp" src="{{ product.image }}" alt=""> </a></div>
+                    <h2><a class="lien_title" href="{{ path('show_product', {'id': product.id}) }}">{{ product.title }}</a></h2>
+                    <p>{{ product.content }}</p>
+                </article>
+            {% endfor %}
+        </section>
+    {% endblock %}
+

@@ -1,0 +1,67 @@
+{# Template de base pour toutes les pages du site
+## doctype, html, header, footer
+#}
+
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img class="resp" src="https://www.freeiconspng.com/uploads/blogger-logo-icon-png-19.png" alt="logo">
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a class="lienMenu" href="{{ path('home_page') }}">Accueil</a></li>
+                <li><a class="lienMenu" href="{{ path('list_page') }}">Blog</a></li>
+                <li><a class="lienMenu" href="{{ path('list_products') }}">Produits</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {# block 'main' modifiable selon la page #}
+        {% block main %}    {# block 'main' de la homepage #}
+
+            <div class="homeImg">
+                <img class="resp" src="http://www.darioargentoproject.com/wp-content/uploads/2018/09/Comment-commencer-un-blog.jpg" alt="image home">
+            </div>
+            <h1 class="homeTitre">Titre du blog</h1>
+            <section class="contenu">
+                {# slice : filtre permettant de parcourir un array depuis 1 élément précis #}
+                {# length : filtre récupérant la taille du array #}
+                {# length-3 part de la taille du tableau et va parcourir les 3 derniers éléments #}
+                {% for id, article in articles | slice(articles|length-3) %}
+                    <article class="articleList">
+                        <div class="image"><a href="{{ path('article_page', {'id' : id}) }}"><img class="resp" src="{{ article.image }}" alt=""> </a></div>
+                        <h2>{{ article.title }}</h2>
+                        <p>{{ article.content }}</p>
+                    </article>
+                {% endfor %}
+
+            </section>
+
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <ul class="navFooter">
+            <li>lien 1</li>
+            <li>lien 2</li>
+            <li>
+                <div class="logo">
+                    <img class="resp" src="https://www.freeiconspng.com/uploads/blogger-logo-icon-png-19.png" alt="logo">
+                </div>
+            </li>
+            <li>lien 3</li>
+            <li><a class="lienMenu" href="{{ path('cgv') }}">CGV</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
